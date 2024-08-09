@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CriptoDemonstração</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Demonstração - Cifras</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#explanation">Sobre a Criptografia</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="encryption">
+            <h2>Criptografe seu texto</h2>
+            <label for="plaintext">Texto Simples:</label>
+            <textarea id="plaintext"></textarea>
+
+            <label for="algorithm">Escolha o Algoritmo:</label>
+            <select id="algorithm">
+                <option value="cesar">Cifra de César</option>
+                <option value="cyclic">Cifra de Substituição Cíclica</option>
+            </select>
+
+            <div id="cesar-options" class="algorithm-options">
+                <label for="shift">Deslocamento (Shift):</label>
+                <input type="number" id="shift" value="3">
+            </div>
+
+            <div id="cyclic-options" class="algorithm-options">
+                <label for="num-ciphers">Número de Cifras:</label>
+                <select id="num-ciphers">
+                    <option value="1">1 Cifra</option>
+                    <option value="2">2 Cifras</option>
+                </select>
+
+                <div id="cipher1-container">
+                    <label for="key1">Cifra de Substituição 1:</label>
+                    <input type="text" id="key1" placeholder="Ex: QWERTY...">
+                </div>
+
+                <div id="cipher2-container" style="display: none;">
+                    <label for="key2">Cifra de Substituição 2:</label>
+                    <input type="text" id="key2" placeholder="Ex: ASDFGH...">
+                </div>
+            </div>
+
+            <button id="encryptButton">Cifrar</button>
+
+            <label for="ciphertext">Texto Cifrado:</label>
+            <textarea id="ciphertext" readonly></textarea>
+        </section>
+
+        <section id="explanation">
+            <h2>Como Funciona</h2>
+            <article id="cesar-explanation">
+                <h3>Cifra de César</h3>
+                <p>A Cifra de César é uma forma de criptografia por substituição onde cada letra do texto simples é substituída por outra, deslocada um número fixo de posições no alfabeto.</p>
+                <p><strong>Exemplo:</strong> Com um deslocamento de 3, "A" se torna "D", "B" se torna "E", etc.</p>
+            </article>
+
+            <article id="cyclic-explanation">
+                <h3>Cifra de Substituição Cíclica</h3>
+                <p>A Cifra de Substituição Cíclica utiliza uma ou duas chaves de substituição para cifrar o texto. Se duas chaves forem usadas, a primeira cifra é aplicada a todas as posições ímpares do texto, e a segunda cifra a todas as posições pares.</p>
+                <p><strong>Exemplo:</strong> Com a primeira chave "QWERTY..." e a segunda "ASDFGH...", "A" se torna "Q", "B" se torna "S", "C" se torna "E", e assim por diante.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Demonstração - Cifras.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
